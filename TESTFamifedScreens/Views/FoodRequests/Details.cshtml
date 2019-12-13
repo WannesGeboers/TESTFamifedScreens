@@ -1,0 +1,48 @@
+﻿@model TESTFamifedScreens.DAL.Entities.FoodRequest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FoodRequest</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsThirsty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsThirsty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlowStatusId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlowStatusId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeOfReview)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeOfReview)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeOfOrder)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeOfOrder)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

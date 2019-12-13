@@ -1,0 +1,49 @@
+﻿@model TESTFamifedScreens.DAL.Entities.FoodRequest
+@using TESTFamifedScreens.BLL.Enums
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FoodRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group ">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RequestBy" /> @Html.DisplayNameFor(model => model.RequestBy)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsThirsty" /> @Html.DisplayNameFor(model => model.IsThirsty)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FoodOptionId" />  @Html.DropDownListFor(m => m.OrderedBy,
+new SelectList(Enum.GetValues(typeof(FoodOption))),
+"Select Food")
+                </label>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

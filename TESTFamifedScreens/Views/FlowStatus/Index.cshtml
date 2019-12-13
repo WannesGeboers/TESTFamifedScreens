@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TESTFamifedScreens.DAL.Entities.FoodRequest>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>New Requests</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestBy.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsThirsty)
+            </th>
+            <th>
+                    Broodjes
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.RequestBy.FirstName)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsThirsty)
+            </td>
+            <td>
+                @Enum.GetName(typeof(TESTFamifedScreens.BLL.Enums.FoodOption), item.FoodOptionId)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.FlowStatusId)*@
+                @Enum.GetName(typeof(TESTFamifedScreens.BLL.Enums.FlowStatus), item.FlowStatusId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOfReview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOfOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
